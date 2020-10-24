@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useHistory} from 'react-router-dom';
 import './appContent.css';
+import Button from "@material-ui/core/Button";
 
 export default function AppContent(){
 
@@ -19,6 +20,11 @@ export default function AppContent(){
             .then(response => response.data)
             .then(data => setData(data));
     })
+
+    function handleButton(){
+        localStorage.removeItem('user')
+        history.push('/')
+    }
 
     return(
         <div className="aṕp-content">
@@ -45,6 +51,14 @@ export default function AppContent(){
                 ))}
                 </tbody>
             </table>
+            <Button
+                onClick={handleButton}
+                className="button"
+                variant={"contained"}
+                color={"secondary"}
+            >
+                Logout
+            </Button>
         </div>
     )
 }
