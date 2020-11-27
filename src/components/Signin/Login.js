@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import "./login.css";
+import "./Login.css";
 import {useHistory} from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -24,7 +24,7 @@ export default function Login(){
         if (memory.username === user.username && memory.password === user.password){
             alert(`Welcome ${user.username}`);
             localStorage.setItem('user', JSON.stringify(user));
-            history.push('/app-content');
+            history.push('/');
         }else {
             alert('Bad credentials, try again')
         }
@@ -56,6 +56,8 @@ export default function Login(){
                     <Button type={"submit"} fullWidth variant="contained" color={"primary"} className="button">
                         LOGIN
                     </Button>
+                    <br/><br/>
+                    <a style={{padding:'20px'}} href={"/signUp"}>Don't have an account?</a>
                 </form>
             </div>
         </div>
