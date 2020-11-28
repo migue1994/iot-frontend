@@ -15,7 +15,7 @@ export default function Noise(){
     })
 
     useEffect(() => {
-        axios.get('https://iot-endpoint.herokuapp.com/api/iot/data/noiseChart')
+        axios.get('https://iot-endpoint.azurewebsites.net/api/iot/data/noiseChart')
             .then(response => response.data)
             .then(data => setChart(data))
 
